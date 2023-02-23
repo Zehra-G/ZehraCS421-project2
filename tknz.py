@@ -1,8 +1,14 @@
+"""
+Zehra Gundogdu
+CS421 Project 2 
+tknz.py
+02/22/2023
+"""
+
 import os
 import string
 
-# Specify the directory to search for Python files
-root_dir = '/Users/zehragundogdu/Desktop/CS421/mplsci' 
+root_dir = '/Users/zehragundogdu/Desktop/CS421/mplsci' #path to folder with matplotlib and scipy
 
 # Initialize lists to hold Python file paths and their contents
 python_files = []
@@ -30,16 +36,13 @@ tokenlist = []
 
 with open("python_files2.txt", "r") as f:
     for line in f:
-        # Count the number of lines
         num_lines += 1
-
         # Tokenize the line by lowercasing everything and splitting on all whitespace and punctuation characters
         tokens = line.translate(str.maketrans("", "", string.punctuation)).lower().split()
-        for word in tokens:
-            tokenlist.append(word)
+        tokenlist.append(tokens)
         num_tokens += len(tokens)
 
 print(f"Number of lines: {num_lines}")
 print(f"Number of tokens: {num_tokens}")
 
-print(tokenlist[3])
+#print(tokenlist[3])
